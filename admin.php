@@ -43,6 +43,14 @@ function notify_woosms_settings_init(  ) {
 		'notify_woosms_pluginPage_api_section'
 	);
 
+  add_settings_field(
+		'notify_woosms_api_key',
+		__( 'API Key:', 'notify-woosms' ),
+		'notify_woosms_api_key_render',
+		'pluginPage',
+		'notify_woosms_pluginPage_api_section'
+	);
+
 	add_settings_field(
 		'notify_woosms_api_user_name',
 		__( 'User Name:', 'notify-woosms' ),
@@ -50,6 +58,7 @@ function notify_woosms_settings_init(  ) {
 		'pluginPage',
 		'notify_woosms_pluginPage_api_section'
 	);
+
 
 	add_settings_field(
 		'notify_woosms_api_password',
@@ -61,7 +70,7 @@ function notify_woosms_settings_init(  ) {
 
 	add_settings_field(
 		'notify_woosms_api_mask',
-		__( 'Masking Name (If Any):', 'notify-woosms' ),
+		__( 'Masking Name:', 'notify-woosms' ),
 		'notify_woosms_api_mask_render',
 		'pluginPage',
 		'notify_woosms_pluginPage_api_section'
@@ -142,12 +151,23 @@ function notify_woosms_select_provider_render(  ) {
 	$options = get_option( 'notify_woosms_settings' );
 	?>
 	<select name='notify_woosms_settings[notify_woosms_select_provider]'>
-		<option value='notify' <?php selected( $options['notify_woosms_select_provider'], 1 ); ?>>Dianahost</option>
+    <option value='dianahost_psms' <?php selected( $options['notify_woosms_select_provider'], 'dianahost_psms' ); ?>>DianaHost Psms</option>
+    <option value='dianahost_esms' <?php selected( $options['notify_woosms_select_provider'], 'dianahost_esms' ); ?>>DianaHost Esms</option>
+    <option value='dianahost_gsms' <?php selected( $options['notify_woosms_select_provider'], 'dianahost_gsms' ); ?>>DianaHost Gsms</option>
 	</select>
 	<?php
 
 }
 
+function notify_woosms_api_key_render(  ) {
+
+	$options = get_option( 'notify_woosms_settings' );
+	?>
+	<input type='text' name='notify_woosms_settings[notify_woosms_api_key]' value='<?php echo $options['notify_woosms_api_key']; ?>'>
+  <p><i>If you use API KEY, You don't have to enter user name and password.</i></p>
+	<?php
+
+}
 
 function notify_woosms_api_user_name_render(  ) {
 

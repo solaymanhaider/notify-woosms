@@ -19,7 +19,16 @@ function notify_woosms_send_sms($mobilenumber, $smsbodytext){
 	    'cookies' => array()
 	);
 
-	$response = wp_remote_post( 'https://psms.dianahost.com/api/sms/v1/send', $args );
+	if ($options['notify_woosms_select_provider'] == 'dianahost_psms') {
+		$response = wp_remote_post( 'https://psms.dianahost.com/api/sms/v1/send', $args );
+	} elseif ($options['notify_woosms_select_provider'] == 'dianahost_esms') {
+		$apikey = $options['notify_woosms_api_key'];
+		$response = wp_remote_post( 'http://esms.hostdokan.com/smsapi?api_key='.$apikey.'&type=text&contacts='.$mobilenumber.'&msg='.$smsbodytext.'&senderid='.$options['notify_woosms_api_mask'] );
+	} elseif ($options['notify_woosms_select_provider'] == 'dianahost_gsms') {
+		$apikey = $options['notify_woosms_api_key'];
+		$response = wp_remote_post( 'http://gsms.pw/smsapi?api_key='.$apikey.'&type=text&contacts='.$mobilenumber.'&msg='.$smsbodytext.'&senderid='.$options['notify_woosms_api_mask'] );
+	}
+
 
 	return false;
 }

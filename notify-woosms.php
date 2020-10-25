@@ -1,7 +1,7 @@
 <?php
 /**
  * @package notify_woosms
- * @version 1.0
+ * @version 2.0
  */
 /*
 Plugin Name: Notify WooSMS
@@ -17,4 +17,3 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 include( plugin_dir_path( __FILE__ ) . 'admin.php');
 include( plugin_dir_path( __FILE__ ) . 'sms.php');
 include( plugin_dir_path( __FILE__ ) . 'woocommerce.php');
-
