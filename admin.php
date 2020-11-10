@@ -158,9 +158,10 @@ function notify_woosms_select_provider_render(  ) {
 	$options = get_option( 'notify_woosms_settings' );
 	?>
 	<select name='notify_woosms_settings[notify_woosms_select_provider]'>
-    <option value='dianahost_psms' <?php selected( $options['notify_woosms_select_provider'], 'dianahost_psms' ); ?>>DianaHost Psms</option>
-    <option value='dianahost_esms' <?php selected( $options['notify_woosms_select_provider'], 'dianahost_esms' ); ?>>DianaHost Esms</option>
-    <option value='dianahost_gsms' <?php selected( $options['notify_woosms_select_provider'], 'dianahost_gsms' ); ?>>DianaHost Gsms</option>
+		<option value='tiniyo' <?php selected( $options['notify_woosms_select_provider'], 'tiniyo' ); ?>>Tiniyo</option>
+		<option value='dianahost_psms' <?php selected( $options['notify_woosms_select_provider'], 'dianahost_psms' ); ?>>DianaHost Psms</option>
+		<option value='dianahost_esms' <?php selected( $options['notify_woosms_select_provider'], 'dianahost_esms' ); ?>>DianaHost Esms</option>
+		<option value='dianahost_gsms' <?php selected( $options['notify_woosms_select_provider'], 'dianahost_gsms' ); ?>>DianaHost Gsms</option>
 	</select>
 	<?php
 
