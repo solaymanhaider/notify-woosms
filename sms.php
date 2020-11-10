@@ -35,7 +35,7 @@ function notify_woosms_send_sms($mobilenumber, $smsbodytext){
 			'text' => $smsbodytext
 		);
 		$response = wp_remote_post( $url, array(
-			'body'    => $body,
+			'body'    => json_encode($body),
 			'headers' => array(
 				'Authorization' => 'Basic ' . base64_encode( $options['notify_woosms_api_user_name'] . ':' . $options['notify_woosms_api_password'] ),
 				'Content-Type' => 'application/json',
