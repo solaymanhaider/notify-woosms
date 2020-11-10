@@ -1,6 +1,6 @@
 # Notify WooSMS
 
-WooCommerce order status sms notifications plugin for Bangladeshi SMS service providers.
+WooCommerce order status sms notifications plugin for SMS.
 
 [Download From WordPress Directory](https://wordpress.org/plugins/notify-woosms/)
 
