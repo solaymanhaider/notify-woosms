@@ -76,6 +76,13 @@ function notify_woosms_settings_init(  ) {
 		'notify_woosms_pluginPage_api_section'
 	);
 
+	add_settings_field(
+		'notify_woosms_api_src',
+		__( 'SenderId:', 'notify-woosms' ),
+		'notify_woosms_api_src_render',
+		'pluginPage',
+		'notify_woosms_pluginPage_api_section'
+	);
 
 	add_settings_section(
 		'notify_woosms_pluginPage_section',
@@ -188,6 +195,14 @@ function notify_woosms_api_password_render(  ) {
 
 }
 
+function notify_woosms_api_src_render(  ) {
+
+	$options = get_option( 'notify_woosms_settings' );
+	?>
+	<input type='text' name='notify_woosms_settings[notify_woosms_api_src]' value='<?php echo $options['notify_woosms_api_src']; ?>'>
+	<?php
+
+}
 
 function notify_woosms_api_mask_render(  ) {
 
