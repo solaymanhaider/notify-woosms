@@ -31,7 +31,7 @@ function notify_woosms_send_sms($mobilenumber, $smsbodytext){
 		$url = 'https://api.tiniyo.com/v1/Account/' . $options['notify_woosms_api_user_name'] . '/Message'
 		$body = array(
 			'dst' => $mobilenumber,
-			'src' => $options['notify_woosms_src'],
+			'src' => $options['notify_woosms_api_src'],
 			'text' => $smsbodytext
 		);
 		$response = wp_remote_post( $url, array(
