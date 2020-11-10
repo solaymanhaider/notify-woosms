@@ -76,6 +76,13 @@ function notify_woosms_settings_init(  ) {
 		'notify_woosms_pluginPage_api_section'
 	);
 
+	add_settings_field(
+		'notify_woosms_api_src',
+		__( 'SenderId:', 'notify-woosms' ),
+		'notify_woosms_api_src_render',
+		'pluginPage',
+		'notify_woosms_pluginPage_api_section'
+	);
 
 	add_settings_section(
 		'notify_woosms_pluginPage_section',
@@ -151,9 +158,10 @@ function notify_woosms_select_provider_render(  ) {
 	$options = get_option( 'notify_woosms_settings' );
 	?>
 	<select name='notify_woosms_settings[notify_woosms_select_provider]'>
-    <option value='dianahost_psms' <?php selected( $options['notify_woosms_select_provider'], 'dianahost_psms' ); ?>>DianaHost Psms</option>
-    <option value='dianahost_esms' <?php selected( $options['notify_woosms_select_provider'], 'dianahost_esms' ); ?>>DianaHost Esms</option>
-    <option value='dianahost_gsms' <?php selected( $options['notify_woosms_select_provider'], 'dianahost_gsms' ); ?>>DianaHost Gsms</option>
+		<option value='tiniyo' <?php selected( $options['notify_woosms_select_provider'], 'tiniyo' ); ?>>Tiniyo</option>
+		<option value='dianahost_psms' <?php selected( $options['notify_woosms_select_provider'], 'dianahost_psms' ); ?>>DianaHost Psms</option>
+		<option value='dianahost_esms' <?php selected( $options['notify_woosms_select_provider'], 'dianahost_esms' ); ?>>DianaHost Esms</option>
+		<option value='dianahost_gsms' <?php selected( $options['notify_woosms_select_provider'], 'dianahost_gsms' ); ?>>DianaHost Gsms</option>
 	</select>
 	<?php
 
@@ -188,6 +196,14 @@ function notify_woosms_api_password_render(  ) {
 
 }
 
+function notify_woosms_api_src_render(  ) {
+
+	$options = get_option( 'notify_woosms_settings' );
+	?>
+	<input type='text' name='notify_woosms_settings[notify_woosms_api_src]' value='<?php echo $options['notify_woosms_api_src']; ?>'>
+	<?php
+
+}
 
 function notify_woosms_api_mask_render(  ) {
 

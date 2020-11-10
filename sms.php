@@ -27,6 +27,20 @@ function notify_woosms_send_sms($mobilenumber, $smsbodytext){
 	} elseif ($options['notify_woosms_select_provider'] == 'dianahost_gsms') {
 		$apikey = $options['notify_woosms_api_key'];
 		$response = wp_remote_post( 'http://gsms.pw/smsapi?api_key='.$apikey.'&type=text&contacts='.$mobilenumber.'&msg='.$smsbodytext.'&senderid='.$options['notify_woosms_api_mask'] );
+	}  elseif ($options['notify_woosms_select_provider'] == 'tiniyo') {
+		$url = 'https://api.tiniyo.com/v1/Account/' . $options['notify_woosms_api_user_name'] . '/Message'
+		$body = array(
+			'dst' => $mobilenumber,
+			'src' => $options['notify_woosms_api_src'],
+			'text' => $smsbodytext
+		);
+		$response = wp_remote_post( $url, array(
+			'body'    => json_encode($body),
+			'headers' => array(
+				'Authorization' => 'Basic ' . base64_encode( $options['notify_woosms_api_user_name'] . ':' . $options['notify_woosms_api_password'] ),
+				'Content-Type' => 'application/json',
+			),
+		) );
 	}
 
 
