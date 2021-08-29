@@ -12,9 +12,9 @@ WooCommerce order status sms notifications plugin for Bangladeshi SMS service pr
 
 == Description ==
 
-WooCommerce order status sms notifications plugin for Bangladeshi SMS service providers. 
+WooCommerce order status sms notifications plugin for Bangladeshi SMS service providers.
 
-We do not provide support or we are not liable for SMS service. We just provide the SMS sending tool. Please read [Dianahost ToS and Privacy Policy](https://www.dianahost.com/tos/) before use.
+We do not provide support or we are not liable for SMS service. We just provide the SMS sending tool. Please read [Dianahost ToS and Privacy Policy](https://www.dianahost.com/tos/) [cornQ ToS and Privacy Policy](https://cornq.com/tos/) before use.
 
 == Installation ==
 
