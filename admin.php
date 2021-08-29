@@ -154,6 +154,7 @@ function notify_woosms_select_provider_render(  ) {
     <option value='dianahost_psms' <?php selected( $options['notify_woosms_select_provider'], 'dianahost_psms' ); ?>>DianaHost Psms</option>
     <option value='dianahost_esms' <?php selected( $options['notify_woosms_select_provider'], 'dianahost_esms' ); ?>>DianaHost Esms</option>
     <option value='dianahost_gsms' <?php selected( $options['notify_woosms_select_provider'], 'dianahost_gsms' ); ?>>DianaHost Gsms</option>
+    <option value='cornq_sms' <?php selected( $options['notify_woosms_select_provider'], 'cornq_sms' ); ?>>cornQ SMS</option>
 	</select>
 	<?php
 
